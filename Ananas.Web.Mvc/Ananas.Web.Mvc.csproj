@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Update="nlog.config" CopyToOutputDirectory="PreserveNewest" />
+    <PackageReference Include="NLog.Web.AspNetCore" Version="4.6.0"/>
+    <PackageReference Include="NLog" Version="4.5.8" />
+  </ItemGroup>
+</Project>
