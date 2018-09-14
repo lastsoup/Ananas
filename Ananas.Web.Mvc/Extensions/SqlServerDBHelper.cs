@@ -12,7 +12,7 @@ namespace Ananas.Web.Mvc.Extensions
         {
             get
             {
-                string connectionstring =ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+                string connectionstring =ConfigurationManager.ConnectionStrings["DefaultConnection1"].ConnectionString;
                 if (connection == null)
                 {
                     connection = new SqlConnection(connectionstring);

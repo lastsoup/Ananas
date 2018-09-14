@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Ananas.Web.Mvc.Examples.Models;
-using Ananas.Web.Mvc;
+using Ananas.Web.Mvc.Extensions;
+using Ananas.Web.Mvc.Models;
 
 namespace Ananas.Web.Mvc.Examples.Controllers
 {
@@ -14,7 +11,10 @@ namespace Ananas.Web.Mvc.Examples.Controllers
         
         public IActionResult Index()
         {
+            UserInfo user = new UserFactory().FirstOne("select * from Ananas_User where sName='qingtang166@163.com'");
+            Logs.LogWriter("4324",Request.HttpContext.Connection.RemoteIpAddress.ToString()); 
             return View();
+            
         }
 
         public IActionResult About()

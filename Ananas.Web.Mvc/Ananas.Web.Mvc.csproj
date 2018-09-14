@@ -3,11 +3,11 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <Content Update="nlog.config" CopyToOutputDirectory="PreserveNewest"/>
     <PackageReference Include="NLog.Web.AspNetCore" Version="4.6.0"/>
     <PackageReference Include="NLog" Version="4.5.8"/>
     <PackageReference Include="System.Data.Common" Version="4.3.0"/>
     <PackageReference Include="System.Data.SqlClient" Version="4.5.1"/>
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0"/>
+    <PackageReference Include="fastJSON" Version="2.2.0"/>
   </ItemGroup>
 </Project>

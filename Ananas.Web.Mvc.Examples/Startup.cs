@@ -26,7 +26,7 @@ namespace Ananas.Web.Mvc.Examples
         public void ConfigureServices(IServiceCollection services)
         {
             //var strConnection=Configuration.GetConnectionString("DefaultConnection");
-            var ss=SqlServerDBHelper.GetDataSet("select * from [Table]");
+            //var ss=SqlServerDBHelper.GetDataSet("select * from [Table]");
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -50,7 +50,7 @@ namespace Ananas.Web.Mvc.Examples
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
-
+            
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();

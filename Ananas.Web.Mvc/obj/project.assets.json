@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.0": {
+      "fastJSON/2.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/fastjson.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/fastjson.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Hosting.Abstractions/2.0.0": {
         "type": "package",
         "dependencies": {
@@ -705,6 +714,24 @@
     }
   },
   "libraries": {
+    "fastJSON/2.2.0": {
+      "sha512": "J9A6vtpbH8j1SFsdbT3rr64DKm4U9HezO+yoiTlxdux4R4p2SNxg834W0P5C/vrM2tbbONi5sRoVZ6k9cmmNsg==",
+      "type": "package",
+      "path": "fastjson/2.2.0",
+      "files": [
+        "fastjson.2.2.0.nupkg.sha512",
+        "fastjson.nuspec",
+        "lib/Howto.md",
+        "lib/history.txt",
+        "lib/net20/fastjson.dll",
+        "lib/net35/fastjson.dll",
+        "lib/net4.0/fastjson.dll",
+        "lib/net40/fastjson.dll",
+        "lib/netstandard2.0/fastJSON.deps.json",
+        "lib/netstandard2.0/fastjson.dll",
+        "lib/readme.md"
+      ]
+    },
     "Microsoft.AspNetCore.Hosting.Abstractions/2.0.0": {
       "sha512": "IR2zlm3d/CmYbkw+cMM7M6mUAi+xsFUPfWqGYqzZVC5o6jX3xD2Z4Uf44UBaWKMBf5Z7q9dodIdXxwFPF2Hxhg==",
       "type": "package",
@@ -2564,7 +2591,8 @@
       "NLog.Web.AspNetCore >= 4.6.0",
       "System.Configuration.ConfigurationManager >= 4.5.0",
       "System.Data.Common >= 4.3.0",
-      "System.Data.SqlClient >= 4.5.1"
+      "System.Data.SqlClient >= 4.5.1",
+      "fastJSON >= 2.2.0"
     ]
   },
   "packageFolders": {
@@ -2631,6 +2659,10 @@
           "System.Data.SqlClient": {
             "target": "Package",
             "version": "[4.5.1, )"
+          },
+          "fastJSON": {
+            "target": "Package",
+            "version": "[2.2.0, )"
           }
         },
         "imports": [

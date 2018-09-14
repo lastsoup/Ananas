@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.1": {
+      "fastJSON/2.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/fastjson.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/fastjson.dll": {}
+        }
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
         "type": "package",
         "dependencies": {
@@ -4427,7 +4436,8 @@
           "NLog.Web.AspNetCore": "4.6.0",
           "System.Configuration.ConfigurationManager": "4.5.0",
           "System.Data.Common": "4.3.0",
-          "System.Data.SqlClient": "4.5.1"
+          "System.Data.SqlClient": "4.5.1",
+          "fastJSON": "2.2.0"
         },
         "compile": {
           "bin/placeholder/Ananas.Web.Mvc.dll": {}
@@ -4439,6 +4449,24 @@
     }
   },
   "libraries": {
+    "fastJSON/2.2.0": {
+      "sha512": "J9A6vtpbH8j1SFsdbT3rr64DKm4U9HezO+yoiTlxdux4R4p2SNxg834W0P5C/vrM2tbbONi5sRoVZ6k9cmmNsg==",
+      "type": "package",
+      "path": "fastjson/2.2.0",
+      "files": [
+        "fastjson.2.2.0.nupkg.sha512",
+        "fastjson.nuspec",
+        "lib/Howto.md",
+        "lib/history.txt",
+        "lib/net20/fastjson.dll",
+        "lib/net35/fastjson.dll",
+        "lib/net4.0/fastjson.dll",
+        "lib/net40/fastjson.dll",
+        "lib/netstandard2.0/fastJSON.deps.json",
+        "lib/netstandard2.0/fastjson.dll",
+        "lib/readme.md"
+      ]
+    },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "sha512": "rMDlyePoxggkmN/qgha1+BR2Uy+dOr38xKCQOPfVNKGY07R2nYJGMTKJFE1XFgwD70RYUNazf2fqutjJF18XgQ==",
       "type": "package",
@@ -11780,9 +11808,7 @@
     ".NETCoreApp,Version=v2.1": [
       "Ananas.Web.Mvc >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.1.1",
-      "Microsoft.NETCore.App >= 2.1.0",
-      "NLog >= 4.5.8",
-      "NLog.Web.AspNetCore >= 4.6.0"
+      "Microsoft.NETCore.App >= 2.1.0"
     ]
   },
   "packageFolders": {
@@ -11838,14 +11864,6 @@
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
-          },
-          "NLog": {
-            "target": "Package",
-            "version": "[4.5.8, )"
-          },
-          "NLog.Web.AspNetCore": {
-            "target": "Package",
-            "version": "[4.6.0, )"
           }
         },
         "imports": [
