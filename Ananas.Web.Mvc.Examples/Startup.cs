@@ -47,9 +47,11 @@ namespace Ananas.Web.Mvc.Examples
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/error/index");
+                app.UseStatusCodePagesWithReExecute("/error/index");
                 app.UseHsts();
             }
+            
             
             app.UseHttpsRedirection();
             app.UseStaticFiles();
@@ -57,6 +59,9 @@ namespace Ananas.Web.Mvc.Examples
 
             app.UseMvc(routes =>
             {
+                routes.MapRoute(
+                    name: "Admin",
+                    template: "{area:exists}/{uid}/{controller=Home}/{action=Index}/{id?}");
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");

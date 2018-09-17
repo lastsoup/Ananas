@@ -68,3 +68,5 @@ D:\GithubProjects\Ananas\Ananas.Web.Mvc.Examples\obj\Debug\netcoreapp2.1\Ananas.
 D:\GithubProjects\Ananas\Ananas.Web.Mvc.Examples\obj\Debug\netcoreapp2.1\Ananas.Web.Mvc.Examples.pdb
 D:\GithubProjects\Ananas\Ananas.Web.Mvc.Examples\bin\Debug\netcoreapp2.1\Ananas.Web.Mvc.Examples.dll.config
 D:\GithubProjects\Ananas\Ananas.Web.Mvc.Examples\bin\Debug\netcoreapp2.1\NLog.config
+D:\GithubProjects\Ananas\Ananas.Web.Mvc.Examples\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Home\Index.g.cshtml.cs
+D:\GithubProjects\Ananas\Ananas.Web.Mvc.Examples\obj\Debug\netcoreapp2.1\Razor\Views\Error\Index.g.cshtml.cs

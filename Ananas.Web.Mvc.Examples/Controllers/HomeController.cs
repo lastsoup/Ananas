@@ -9,7 +9,7 @@ namespace Ananas.Web.Mvc.Examples.Controllers
     public class HomeController : Controller
     {
         
-        public IActionResult Index()
+        public IActionResult Index(string uid)
         {
             UserInfo user = new UserFactory().FirstOne("select * from Ananas_User where sName='qingtang166@163.com'");
             Logs.LogWriter("4324",Request.HttpContext.Connection.RemoteIpAddress.ToString()); 
