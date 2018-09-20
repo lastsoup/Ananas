@@ -6,7 +6,7 @@ using NLog.Config;
 
 namespace Ananas.Web.Mvc.Extensions
 {
-    public class Logs
+    public class NLogHelper
     {
         private static Logger logger = LogManager.GetCurrentClassLogger(); //初始化日志类
 
@@ -28,7 +28,7 @@ namespace Ananas.Web.Mvc.Extensions
         /// <summary>
         /// 静态构造函数
         /// </summary>
-        static Logs()
+        static NLogHelper()
         {
             //初始化配置日志
             LogManager.Configuration = new XmlLoggingConfiguration(System.AppDomain.CurrentDomain.BaseDirectory.ToString() + "\\NLog.config");

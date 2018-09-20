@@ -50,9 +50,9 @@ namespace Ananas.Web.Mvc.Examples
                 app.UseExceptionHandler("/error/index");
                 app.UseStatusCodePagesWithReExecute("/error/index");
                 app.UseHsts();
+
             }
-            
-            
+              
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
