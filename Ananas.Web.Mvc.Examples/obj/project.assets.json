@@ -226,7 +226,7 @@
           "build/netcoreapp2.1/Microsoft.AspNetCore.App.targets": {}
         }
       },
-      "Microsoft.AspNetCore.Authentication/2.1.1": {
+      "Microsoft.AspNetCore.Authentication/2.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.Core": "2.1.1",
@@ -258,10 +258,10 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Authentication.Abstractions.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Authentication.Cookies/2.1.1": {
+      "Microsoft.AspNetCore.Authentication.Cookies/2.1.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Authentication": "2.1.1"
+          "Microsoft.AspNetCore.Authentication": "2.1.2"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Authentication.Cookies.dll": {}
@@ -4473,6 +4473,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Microsoft.AspNetCore.Authentication.Cookies": "2.1.2",
           "NLog": "4.5.8",
           "NLog.Web.AspNetCore": "4.6.0",
           "System.Configuration.ConfigurationManager": "4.5.0",
@@ -4562,15 +4563,15 @@
         "microsoft.aspnetcore.app.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Authentication/2.1.1": {
-      "sha512": "WgbDLOGoyX0/EoUdAlihMaKIpON6LwCYZ8fiPhZZe+qdCJhvl1aTBmJ/carHcv3NJGT+ETuq2ppYQr7PKLq1CQ==",
+    "Microsoft.AspNetCore.Authentication/2.1.2": {
+      "sha512": "MXbDTincCKqkrrMF5P8nhjvmXA1yL1mHj8yPJ32wfBkfkLZfV0EhIp/MGKupiVyqsAhjAk0NL9cPslcyvBsQkg==",
       "type": "package",
-      "path": "microsoft.aspnetcore.authentication/2.1.1",
+      "path": "microsoft.aspnetcore.authentication/2.1.2",
       "files": [
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.AspNetCore.Authentication.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Authentication.xml",
-        "microsoft.aspnetcore.authentication.2.1.1.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.2.1.2.nupkg.sha512",
         "microsoft.aspnetcore.authentication.nuspec"
       ]
     },
@@ -4586,15 +4587,15 @@
         "microsoft.aspnetcore.authentication.abstractions.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Authentication.Cookies/2.1.1": {
-      "sha512": "Yz9dgcZvZ+OJjJ8ZX/+DtgY0+9ZuKzNO0cHkDUdQubY4W4Ozn5e194s70lNQiiEGJjah9hd/5yuayPAePiz7DQ==",
+    "Microsoft.AspNetCore.Authentication.Cookies/2.1.2": {
+      "sha512": "anyHJ9EcW//s35943Wg0YXfRbAd5ZkxaPkBQYlta7oy1NnmKGs/ghe7IsqUUTYPzIWRiYpeD6kfsut3TuskQ9Q==",
       "type": "package",
-      "path": "microsoft.aspnetcore.authentication.cookies/2.1.1",
+      "path": "microsoft.aspnetcore.authentication.cookies/2.1.2",
       "files": [
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.AspNetCore.Authentication.Cookies.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Authentication.Cookies.xml",
-        "microsoft.aspnetcore.authentication.cookies.2.1.1.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.cookies.2.1.2.nupkg.sha512",
         "microsoft.aspnetcore.authentication.cookies.nuspec"
       ]
     },
@@ -11911,11 +11912,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GithubProjects\\Ananas\\Ananas.Web.Mvc.Examples\\Ananas.Web.Mvc.Examples.csproj",
+      "projectUniqueName": "d:\\GithubProjects\\Ananas\\Ananas.Web.Mvc.Examples\\Ananas.Web.Mvc.Examples.csproj",
       "projectName": "Ananas.Web.Mvc.Examples",
-      "projectPath": "D:\\GithubProjects\\Ananas\\Ananas.Web.Mvc.Examples\\Ananas.Web.Mvc.Examples.csproj",
+      "projectPath": "d:\\GithubProjects\\Ananas\\Ananas.Web.Mvc.Examples\\Ananas.Web.Mvc.Examples.csproj",
       "packagesPath": "C:\\Users\\lasts\\.nuget\\packages\\",
-      "outputPath": "D:\\GithubProjects\\Ananas\\Ananas.Web.Mvc.Examples\\obj\\",
+      "outputPath": "d:\\GithubProjects\\Ananas\\Ananas.Web.Mvc.Examples\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -11932,8 +11933,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "D:\\GithubProjects\\Ananas\\Ananas.Web.Mvc\\Ananas.Web.Mvc.csproj": {
-              "projectPath": "D:\\GithubProjects\\Ananas\\Ananas.Web.Mvc\\Ananas.Web.Mvc.csproj"
+            "d:\\GithubProjects\\Ananas\\Ananas.Web.Mvc\\Ananas.Web.Mvc.csproj": {
+              "projectPath": "d:\\GithubProjects\\Ananas\\Ananas.Web.Mvc\\Ananas.Web.Mvc.csproj"
             }
           }
         }

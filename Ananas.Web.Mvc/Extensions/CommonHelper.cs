@@ -8,6 +8,7 @@ using Ananas.Web.Mvc.Models;
 using System.Collections.Specialized;
 using System.Reflection;
 using System.ComponentModel;
+using Microsoft.AspNetCore.Http;
 
 namespace Ananas.Web.Mvc.Extensions
 {
@@ -484,9 +485,7 @@ namespace Ananas.Web.Mvc.Extensions
             UserInfo user = new UserFactory().FirstOne("select * from Ananas_User where ID='" + uid + "'");
             return user;
         }
-
       
-
     }
 
     public static class CommonHelperStatic
@@ -504,4 +503,6 @@ namespace Ananas.Web.Mvc.Extensions
             return en.ToString();
         }
     }
+
+    
 }
