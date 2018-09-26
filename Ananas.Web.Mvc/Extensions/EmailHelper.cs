@@ -32,6 +32,7 @@ namespace Ananas.Web.Mvc.Extensions
             }
             catch (Exception ex)
             {
+                System.Diagnostics.Debug.Print(ex.Message);
                 return false;
             }
         }
@@ -58,6 +59,7 @@ namespace Ananas.Web.Mvc.Extensions
             }
             catch (Exception ex)
             {
+                System.Diagnostics.Debug.Print(ex.Message);
                 return false;
             }
         }

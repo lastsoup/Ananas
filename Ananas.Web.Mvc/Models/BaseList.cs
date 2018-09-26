@@ -24,10 +24,7 @@ namespace Ananas.Web.Mvc.Models
             {
                 model.CurrentUser = new UserInfo();
             }
-            model.CurrentLang = GetCurrentLang(context);
-            //获取登录名
-            HttpCookie cookie = context.Cookies["COOKIE_DEFAULT_NAME"];
-            model.LoginName = cookie == null ? "" : cookie["sName"];
+            //model.CurrentLang = GetCurrentLang(context);
             return model;
         }
 
@@ -39,13 +36,8 @@ namespace Ananas.Web.Mvc.Models
             CultureInfo culture = CultureInfo.InstalledUICulture;
             string lang = CultureInfo.InstalledUICulture.ToString();
             if (querylang == null)
-            {   //Get
-                IRequestCookieCollection cookie = context.Request.Cookies["COOKIE_LANG_FOR_USER"];
-                if (cookie != null)
-                {
-                    lang = cookie["Lang"];
-                    culture = new CultureInfo(lang, true);
-                }
+            {   //Get Cookies的lang
+                
             }
             else
             {
