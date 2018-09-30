@@ -4,7 +4,7 @@ using Ananas.Web.Mvc.Io.Implementation;
 using Ananas.Web.Mvc.Models;
 using Microsoft.AspNetCore.Http;
 
-namespace Ananas.Web.Mvc.Models
+namespace Ananas.Web.Mvc.Examples.Models
 {
     public class BaseList
     {

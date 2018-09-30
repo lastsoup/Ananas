@@ -2,8 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Ananas.Web.Mvc.Examples.Models;
 using Ananas.Web.Mvc.Extensions;
-using Ananas.Web.Mvc.Models;
 using ControllerBase = Ananas.Web.Mvc.Base.ControllerBase;
+
 
 namespace Ananas.Web.Mvc.Examples.Controllers
 {
@@ -12,11 +12,11 @@ namespace Ananas.Web.Mvc.Examples.Controllers
         
         public IActionResult Index(string uid)
         {
+            NLogHelper.LogWriter("4324", Request.HttpContext.Connection.RemoteIpAddress.ToString());
             UserInfo user = new UserFactory().FirstOne("select * from Ananas_User where sName='qingtang166@163.com'");
-            NLogHelper.LogWriter("4324",Request.HttpContext.Connection.RemoteIpAddress.ToString()); 
             ViewModel mode = new BaseList().GetCurrentModel(this.HttpContext, user);
             mode.ViewUser=user;
-            return View(mode);
+            return View(mode));
             
         }
 

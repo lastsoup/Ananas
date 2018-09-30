@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using Ananas.Web.Mvc.Models;
 
-namespace Ananas.Web.Mvc.Models
+namespace Ananas.Web.Mvc.Examples.Models
 {
     public class ViewModel
     {
