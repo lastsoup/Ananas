@@ -2,8 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Ananas.Web.Mvc.Examples.Models;
 using Ananas.Web.Mvc.Extensions;
+using Ananas.Web.Mvc.Models;
 using ControllerBase = Ananas.Web.Mvc.Base.ControllerBase;
-
 
 namespace Ananas.Web.Mvc.Examples.Controllers
 {
@@ -16,21 +16,19 @@ namespace Ananas.Web.Mvc.Examples.Controllers
             UserInfo user = new UserFactory().FirstOne("select * from Ananas_User where sName='qingtang166@163.com'");
             ViewModel mode = new BaseList().GetCurrentModel(this.HttpContext, user);
             mode.ViewUser=user;
-            return View(mode));
+            return View(mode);
             
         }
 
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
-
             return View();
         }
 
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
-
             return View();
         }
 
