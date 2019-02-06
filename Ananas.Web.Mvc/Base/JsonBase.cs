@@ -6,6 +6,7 @@
         public bool IsSuccess { set; get; }
         public string Message { set; get; }
         public object BaseData { set; get; }
+        public string Token { set; get; }
     }
 
   

@@ -13,9 +13,10 @@ namespace Ananas.Web.Mvc.Examples.Controllers
         public IActionResult Index(string uid)
         {
             NLogHelper.LogWriter("4324", Request.HttpContext.Connection.RemoteIpAddress.ToString());
-            UserInfo user = new UserFactory().FirstOne("select * from Ananas_User where sName='qingtang166@163.com'");
+            //UserInfo user = new UserFactory().FirstOne("select * from Ananas_User where sName='qingtang166@163.com'");
+            UserInfo user=new UserInfo();
             ViewModel mode = new BaseList().GetCurrentModel(this.HttpContext, user);
-            mode.ViewUser=user;
+            //mode.ViewUser=user;
             return View(mode);
             
         }
