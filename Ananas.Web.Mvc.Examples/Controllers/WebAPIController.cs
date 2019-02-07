@@ -10,6 +10,7 @@ using System.IO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.Configuration;
 using ControllerBase = Microsoft.AspNetCore.Mvc.ControllerBase;
 using System.Threading.Tasks;
@@ -104,12 +105,67 @@ namespace Ananas.Web.Mvc.Examples.Controllers
             }
         }
 
+         [HttpPost("GetFileList")]
+         public IActionResult GetFileList()
+        {
+             try
+            {
+                //string contentRootPath = _hostingEnvironment.ContentRootPath;
+                var filesdir=Path.Combine(_hostingEnvironment.WebRootPath,"Upload");
+                DirectoryInfo root = new DirectoryInfo(filesdir);
+                List<Object> lstFile = new List<Object>();
+                foreach (FileInfo f in root.GetFiles())
+                {
+                    var name=f.Name.Split('-');
+                    var path="/Upload/"+f.Name;
+                    var size=f.Length.ToString();
+                    var extension=f.Extension;
+                    var memi ="";
+                    if(extension!=".bak"){
+
+                        var provider = new FileExtensionContentTypeProvider();
+                        memi = provider.Mappings[extension];
+                    }
+                    lstFile.Add(new { AttachID = name[0],AttachName=name[1],AttachPath=path,AttachSize=size,AttachType=memi});
+                }   
+                return Ok(new JsonBase() { IsSuccess = true,Message="文件获取成功",BaseData=lstFile });
+            }
+            catch (Exception ex){
+                return Ok(new { IsSuccess = false,Message=ex.Message }); 
+            }
+        }
+
+        [HttpPost("DeleteFile")]
+         public IActionResult DeleteFile()
+        {
+              try
+            {
+                var file_Path = Request.Form["file_Path"].ToString();
+                var file_ID = Request.Form["file_ID"].ToString();
+                var filepath=_hostingEnvironment.WebRootPath+file_Path;
+                if (System.IO.File.Exists(filepath))
+                {
+                    System.IO.File.Delete(filepath); 
+                    return Ok(new JsonBase() { IsSuccess = true,Message="删除成功" });
+                }else
+                {
+                     return Ok(new { IsSuccess = false,Message="文件不存在" }); 
+                }
+               
+             }
+            catch (Exception ex){
+                return Ok(new { IsSuccess = false,Message=ex.Message }); 
+            }
+        }
+
+
         [HttpPost("Upload")]
         public async Task<IActionResult> Upload([FromServices]IHostingEnvironment environment)
         {
             
-            string path = string.Empty;
+            string filepath = string.Empty;
             string filename = string.Empty;
+            string fileid = string.Empty;
             var files = Request.Form.Files;
             if (files == null || files.Count() <= 0) { 
                 return Ok(new { upload_State = false,msg="请选择上传的文件" }); 
@@ -128,14 +184,16 @@ namespace Ananas.Web.Mvc.Examples.Controllers
                     {
                         Directory.CreateDirectory(strdir);
                     }
-                    path = Path.Combine(strdir, DateTime.Now.ToString("yyyyMMddHHmmss") +"-"+filename);
-                    using (var stream = new FileStream(path, FileMode.OpenOrCreate, FileAccess.ReadWrite))
+                    fileid=DateTime.Now.ToString("yyyyMMddHHmmss");
+                    filepath = Path.Combine(strdir,fileid +"-"+filename);
+                    using (var stream = new FileStream(filepath, FileMode.OpenOrCreate, FileAccess.ReadWrite))
                     {
                         await file.CopyToAsync(stream);
                     }
                     
                 }
-               return Ok(new { upload_State = true,msg="上传成功",file_Name= filename,file_Path=path});
+               var serverpath="/Upload/"+fileid +"-"+filename;
+               return Ok(new { upload_State = true,msg="上传成功",file_ID=fileid,file_Name= filename,file_Path=serverpath});
             }
             catch (Exception ex){
                 return Ok(new { upload_State = false,msg=ex.Message }); 
