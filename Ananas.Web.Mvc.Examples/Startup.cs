@@ -81,7 +81,11 @@ namespace Ananas.Web.Mvc.Examples
             }
               
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
+            //wwwroot目录静态
+            //app.UseStaticFiles(); 
+            app.UseStaticFiles(new StaticFileOptions{OnPrepareResponse = ctx =>{
+            ctx.Context.Response.Headers.Append("Access-Control-Allow-Origin", Configuration["Access-Control-Allow-Origin"]);}
+            }); 
             app.UseCookiePolicy();
             //跨域
             app.UseCors(builder => builder
