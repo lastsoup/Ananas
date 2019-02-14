@@ -90,6 +90,8 @@ namespace Ananas.Web.Mvc.Examples.Controllers
             }
         }
 
+        
+
         [HttpPost("GetJWT")]
         public OkObjectResult GetJWT([FromBody] UserInfo user)
         {
@@ -105,6 +107,8 @@ namespace Ananas.Web.Mvc.Examples.Controllers
             }
         }
 
+
+         char namechar='@'; 
          [HttpPost("GetFileList")]
          public IActionResult GetFileList()
         {
@@ -116,7 +120,7 @@ namespace Ananas.Web.Mvc.Examples.Controllers
                 List<Object> lstFile = new List<Object>();
                 foreach (FileInfo f in root.GetFiles())
                 {
-                    var name=f.Name.Split('-');
+                    var name=f.Name.Split(namechar);
                     var path="/Upload/"+f.Name;
                     var size=f.Length.ToString();
                     var extension=f.Extension;
@@ -173,11 +177,12 @@ namespace Ananas.Web.Mvc.Examples.Controllers
             
             try
             {
+                
                 foreach (var file in files)
                 {
                     filename=file.FileName;
-                    if(filename.Contains("-")){
-                        return Ok(new { upload_State = false,msg="文件名不能包含-请修改后上传" });
+                    if(filename.Contains(namechar)){
+                        return Ok(new { upload_State = false,msg="文件名不能包含"+namechar+"请修改后上传" });
                     }
                     string strdir= Path.Combine(environment.WebRootPath,"Upload");
                     if (!Directory.Exists(strdir))
@@ -185,14 +190,14 @@ namespace Ananas.Web.Mvc.Examples.Controllers
                         Directory.CreateDirectory(strdir);
                     }
                     fileid=DateTime.Now.ToString("yyyyMMddHHmmss");
-                    filepath = Path.Combine(strdir,fileid +"-"+filename);
+                    filepath = Path.Combine(strdir,fileid +namechar+filename);
                     using (var stream = new FileStream(filepath, FileMode.OpenOrCreate, FileAccess.ReadWrite))
                     {
                         await file.CopyToAsync(stream);
                     }
                     
                 }
-               var serverpath="/Upload/"+fileid +"-"+filename;
+               var serverpath="/Upload/"+fileid +namechar+filename;
                return Ok(new { upload_State = true,msg="上传成功",file_ID=fileid,file_Name= filename,file_Path=serverpath});
             }
             catch (Exception ex){
